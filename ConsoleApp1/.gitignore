@@ -1,0 +1,8 @@
+.vs/
+FileContentIndex/
+*.suo
+*.user
+bin/
+obj/
+*.db
+applicationhost.config
