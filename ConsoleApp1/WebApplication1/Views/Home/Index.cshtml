@@ -1,36 +1,10 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<!-- SECTION 1: HOME -->
-<section id="home" class="py-5">
-    <!-- Paste your Home layout, Full Name, Title, Intro, and 2 Buttons here -->
-</section>
-
-<hr />
-
-<!-- SECTION 2: ABOUT ME -->
-<section id="about" class="py-5">
-    <!-- Copy content from Views_About_Index.cshtml and paste here -->
-</section>
-
-<hr />
-
-<!-- SECTION 3: SKILLS -->
-<section id="skills" class="py-5">
-    <!-- Copy content from Views_Skills_Index.cshtml and paste here -->
-</section>
-
-<hr />
-
-<!-- SECTION 4: PROJECTS -->
-<section id="projects" class="py-5">
-    <!-- Copy content from Views_Projects_Index.cshtml and paste here -->
-</section>
-
-<hr />
-
-<!-- SECTION 5: CONTACT -->
-<section id="contact" class="py-5">
-    <!-- Copy content from Views_Contact_Index.cshtml and paste here -->
-</section>
+<div class="text-center mt-5">
+    <h1 class="display-4 fw-bold">@ViewData["FullName"]</h1>
+    <h3 class="text-primary mb-3">@ViewData["Tagline"]</h3>
+    <p class="lead mx-auto" style="max-width: 700px;">@ViewData["ShortIntro"]</p>
+    <a asp-action="About" class="btn btn-dark btn-lg mt-4">Learn More About Me</a>
+</div>

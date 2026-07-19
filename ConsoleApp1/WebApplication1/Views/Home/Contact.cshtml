@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <h2 class="mb-4">Contact Information</h2>
+        <div class="card shadow">
+            <div class="card-body p-4">
+                <ul class="list-group list-group-flush fs-5">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-envelope me-3 text-primary"></i>
+                        <span>@ViewData["Email"]</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-phone me-3 text-primary"></i>
+                        <span>@ViewData["Phone"]</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-geo-alt me-3 text-primary"></i>
+                        <span>@ViewData["Location"]</span>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-github me-3 text-primary"></i>
+                        <a href="@ViewData["GitHub"]" target="_blank" class="text-decoration-none">@ViewData["GitHub"]</a>
+                    </li>
+                </ul>
+                <a href="mailto:@ViewData["Email"]" class="btn btn-dark mt-4 w-100">Send Email</a>
+            </div>
+        </div>
+    </div>
+</div>
