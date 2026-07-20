@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication1.Controllers
+namespace IT_ELECTIVE_2_Midterm_A1_LastName_FirstName.Controllers
 {
     public class HomeController : Controller
     {
@@ -8,21 +8,19 @@ namespace WebApplication1.Controllers
         public IActionResult Index()
         {
             ViewData["Title"] = "Home";
-            ViewData["FullName"] = "[Judiel Meguiel Mescallado]";
+            ViewData["FullName"] = "Judiel Meguiel Mescallado";
             ViewData["Tagline"] = "Aspiring Software Developer & IT Student";
-            ViewData["ShortIntro"] = "Passionate about building functional and responsive web applications using modern technologies.";
+            ViewData["WelcomeMessage"] = "Welcome to my personal portfolio website. Here you can learn more about me, my skills, and the projects I have built.";
             return View();
         }
 
-        // About Page
+        // About Me Page
         public IActionResult About()
         {
             ViewData["Title"] = "About Me";
-            ViewData["Bio"] = @"I am a dedicated Information Technology student with a strong interest in web development and software design. 
-            I enjoy learning new programming languages and frameworks to create solutions that are useful and easy to use. 
-            My goal is to grow as a developer and contribute to real-world projects.";
+            ViewData["Bio"] = "I am a dedicated Information Technology student passionate about web development and software design. I love learning new technologies and building useful, user-friendly applications.";
             ViewData["Course"] = "Bachelor of Science in Information Technology";
-            ViewData["School"] = "[Pangalan ng Iyong Paaralan]";
+            ViewData["School"] = "Your School / University Name";
             ViewData["YearLevel"] = "2nd Year";
             return View();
         }
@@ -50,29 +48,17 @@ namespace WebApplication1.Controllers
             ViewData["Title"] = "Projects";
             ViewData["ProjectList"] = new[]
             {
-                new
-                {
+                new {
                     Title = "Student Record System",
-                    Description = "Web application to manage student information, grades, and records.",
+                    Description = "A CRUD application to manage student information and grades.",
                     Technologies = "C#, ASP.NET Core, Bootstrap 5, SQL Server",
-                    Image = "/images/project1.jpg",
-                    GitHub = "https://github.com/your-username/student-system"
+                    Image = "/images/project1.jpg"
                 },
-                new
-                {
+                new {
                     Title = "Personal Portfolio Website",
-                    Description = "Responsive portfolio website built using MVC architecture.",
-                    Technologies = "HTML, CSS, Bootstrap 5, C#, Razor",
-                    Image = "/images/project2.jpg",
-                    GitHub = "https://github.com/your-username/portfolio"
-                },
-                new
-                {
-                    Title = "Task Manager App",
-                    Description = "Simple app to organize daily tasks and track progress.",
-                    Technologies = "C#, ASP.NET Core, SQLite",
-                    Image = "/images/project3.jpg",
-                    GitHub = "https://github.com/your-username/portfolio"
+                    Description = "Responsive portfolio site built using MVC architecture.",
+                    Technologies = "HTML, CSS, Bootstrap 5, C#, Razor Views",
+                    Image = "/images/project2.jpg"
                 }
             };
             return View();
@@ -82,10 +68,10 @@ namespace WebApplication1.Controllers
         public IActionResult Contact()
         {
             ViewData["Title"] = "Contact";
-            ViewData["Email"] = "mjudielmeguiel.com";
-            ViewData["Phone"] = "+63 993 434 1387";
-            ViewData["Location"] = "Muntinlupa City Metro Manila, Philippines";
-            ViewData["GitHub"] = "https://github.com/your-username";
+            ViewData["Email"] = "mjudielmeguiel@gmail.com";
+            ViewData["Phone"] = "+63 934 375 2396";
+            ViewData["Location"] = "Metro Manila, Philippines";
+            ViewData["GitHub"] = "https://github.com/mjudielmeguiel";
             return View();
         }
     }

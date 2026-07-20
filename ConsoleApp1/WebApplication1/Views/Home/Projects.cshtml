@@ -1,41 +1,27 @@
 @{
-    ViewData["Title"] = "Projects";
-    var projects = ViewData["ProjectList"] as dynamic[];
+    ViewData["My Portfolio"] = "Projects";
+    var projects = ViewData["ProjectList"] as dynamic[] ?? Array.Empty<dynamic>();
 }
 
-<section class="container py-4">
+<section class="py-4">
     <div class="text-center mb-5">
         <h1 class="display-5 fw-bold">My Projects</h1>
-        <p class="lead text-muted">
-            Here are some of the projects I built during my studies and personal practice.
-        </p>
+        <p class="lead text-muted">Here are some of the projects I built during my studies.</p>
     </div>
 
     <div class="row g-4">
-        @foreach (var proj in projects)
+        @foreach (var project in projects)
         {
             <div class="col-md-6 col-lg-4">
-                <div class="card shadow-sm h-100 border-0">
-                    <img src="@proj.Image" class="card-img-top" alt="@proj.Title" style="height: 200px; object-fit: cover;">
+                <div class="card shadow h-100">
+                    <img src="@project.Image" class="card-img-top" alt="@project.Title" style="height: 200px; object-fit: cover;">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="fw-bold">@proj.Title</h5>
-                        <p class="text-muted small">@proj.Description</p>
-                        <p><strong>Tech:</strong> @proj.Technologies</p>
-                        <div class="mt-auto">
-                            @if (!string.IsNullOrEmpty(proj.GitHub))
-                            {
-                                <a href="@proj.GitHub" target="_blank" class="btn btn-dark w-100">View Code</a>
-                            }
-                        </div>
+                        <h5 class="card-title">@project.Title</h5>
+                        <p class="card-text text-muted">@project.Description</p>
+                        <p><strong>Technologies:</strong> @project.Technologies</p>
                     </div>
                 </div>
             </div>
         }
-    </div>
-
-    <hr class="my-5">
-    <div class="d-flex justify-content-between">
-        <a asp-action="Skills" class="btn btn-outline-secondary">← Back to Skills</a>
-        <a asp-action="Contact" class="btn btn-primary">Contact Me →</a>
     </div>
 </section>

@@ -1,19 +1,35 @@
 @{
     ViewData["Title"] = "About Me";
+    // Kukunin ang datos galing sa ViewData
+    string bio = ViewData["Bio"]?.ToString() ?? "No information available.";
+    string course = ViewData["Course"]?.ToString() ?? "-";
+    string school = ViewData["School"]?.ToString() ?? "-";
+    string year = ViewData["YearLevel"]?.ToString() ?? "-";
 }
 
 <div class="row justify-content-center">
-    <div class="col-lg-8">
+    <div class="col-lg-9">
         <h2 class="mb-4">About Me</h2>
-        <p class="fs-5 lh-lg text-muted">@ViewData["Bio"]</p>
 
-        <div class="card shadow-sm mt-4">
-            <div class="card-body">
-                <h5 class="card-title">Education</h5>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><strong>Course:</strong> @ViewData["Course"]</li>
-                    <li class="list-group-item"><strong>School:</strong> @ViewData["School"]</li>
-                    <li class="list-group-item"><strong>Year:</strong> @ViewData["YearLevel"]</li>
+        <p class="fs-5 lh-lg text-muted mb-5">@bio</p>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h5 class="card-title mb-4">Education</h5>
+
+                <ul class="list-group list-group-flush fs-6">
+                    <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                        <span class="fw-semibold">Course:</span>
+                        <span>@course</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                        <span class="fw-semibold">School:</span>
+                        <span>@school</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+                        <span class="fw-semibold">Year Level:</span>
+                        <span>@year</span>
+                    </li>
                 </ul>
             </div>
         </div>

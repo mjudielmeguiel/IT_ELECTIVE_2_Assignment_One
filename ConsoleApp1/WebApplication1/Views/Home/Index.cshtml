@@ -1,10 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home";
+    // Para siguradong may lalabas kahit may kulang
+    string fullName = ViewData["FullName"]?.ToString() ?? "Your Name";
+    string tagline = ViewData["Tagline"]?.ToString() ?? "Your Tagline";
+    string welcome = ViewData["WelcomeMessage"]?.ToString() ?? "Welcome!";
 }
 
 <div class="text-center mt-5">
-    <h1 class="display-4 fw-bold">@ViewData["FullName"]</h1>
-    <h3 class="text-primary mb-3">@ViewData["Tagline"]</h3>
-    <p class="lead mx-auto" style="max-width: 700px;">@ViewData["ShortIntro"]</p>
-    <a asp-action="About" class="btn btn-dark btn-lg mt-4">Learn More About Me</a>
+    <!-- Ito ang pangalan mo na ipapakita -->
+    <h1 class="display-4 fw-bold text-dark mb-3">@fullName</h1>
+    <h3 class="text-primary mb-4">@tagline</h3>
+    <p class="lead mx-auto" style="max-width: 700px; color: #333;">@welcome</p>
+    <a asp-action="About" class="btn btn-dark btn-lg mt-3">Get to Know Me</a>
 </div>
